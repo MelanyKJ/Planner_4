@@ -1,0 +1,42 @@
+@import '../../components/Scheduler/grid';
+
+.weekly-container {
+  display: flex;
+  flex-grow: 1;
+  overflow: auto;
+  position: relative;
+  border-right: 1px solid $borderColor;
+}
+
+.all-day {
+  background: white;
+  border-bottom: 4px solid #e6e6e6;
+
+  .all-day-container {
+    padding-left: 50px;
+    //@include hideVerticalScrollBars;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .all-day-wrapper {
+    height: 80px;
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    border-top: 1px solid $borderColor;
+  }
+
+  .all-day-grid {
+    border-top: 1px solid $borderColor;
+    margin-left: $hourMarkerWidth;
+    overflow: hidden;
+
+    @include columnCells($borderColor) {
+      height: auto;
+    }
+
+    .cell.today {
+      background: $todayBackgroundColor;
+    }
+  }
+}
